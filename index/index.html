@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daxshatli Veb-sayt PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#4F46E5', 
+                        darkBrand: '#3730A3',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased relative">
+
+    <nav class="bg-white shadow-md fixed w-full z-40 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="#" class="text-2xl font-extrabold text-brand tracking-tight">SuperSayt🔥</a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#asosiy" class="text-gray-600 hover:text-brand font-medium">Asosiy</a>
+                    <a href="#xizmatlar" class="text-gray-600 hover:text-brand font-medium">Xizmatlar</a>
+                    <a href="#aloqa" class="text-gray-600 hover:text-brand font-medium">Aloqa</a>
+                    <div class="h-6 w-px bg-gray-300"></div> <button onclick="toggleModal('loginModal')" class="text-brand font-medium hover:text-darkBrand transition">Kirish</button>
+                    <button onclick="toggleModal('registerModal')" class="bg-brand text-white px-5 py-2 rounded-full font-medium hover:bg-darkBrand transition shadow-md">Ro'yxatdan o'tish</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="asosiy" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-br from-indigo-900 via-brand to-purple-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Kelajakni biz bilan <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500">quring</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-lg text-gray-200 mx-auto mb-10">
+                Endi saytimizda Login, Registratsiya va Aloqa formalari ham 100% interaktiv tarzda ishlaydi.
+            </p>
+            <button onclick="toggleModal('registerModal')" class="bg-white text-brand font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                Hozir qo'shilish 🚀
+            </button>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-pink-500 blur-3xl"></div>
+        </div>
+    </section>
+
+    <section id="xizmatlar" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12">Nega aynan biz?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100">
+                    <div class="text-4xl mb-4">🔐</div>
+                    <h3 class="text-xl font-bold mb-3">Xavfsizlik</h3>
+                    <p class="text-gray-600">Ma'lumotlaringiz eng so'nggi texnologiyalar bilan himoyalangan.</p>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-3">Tezlik</h3>
+                    <p class="text-gray-600">Saytning ishlash tezligi sizni hayratda qoldiradi.</p>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-xl font-bold mb-3">Qo'llab-quvvatlash</h3>
+                    <p class="text-gray-600">24/7 aloqa bo'limi orqali biz bilan bog'laning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aloqa" class="py-20 bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">Biz bilan bog'laning</h2>
+                <form onsubmit="handleContact(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Ismingiz</label>
+                        <input type="text" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-brand focus:border-brand transition outline-none" placeholder="Ali Valiyev">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email manzilingiz</label>
+                        <input type="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-brand focus:border-brand transition outline-none" placeholder="ali@gmail.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Xabaringiz</label>
+                        <textarea rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-brand focus:border-brand transition outline-none" placeholder="Fikrlaringizni yozing..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand text-white font-bold py-3 px-4 rounded-xl hover:bg-darkBrand transition shadow-lg">
+                        Xabarni Yuborish ✉️
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2026 SuperSayt. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md transform scale-95 transition-transform duration-300 relative">
+            <button onclick="toggleModal('loginModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Tizimga Kirish</h3>
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand focus:border-brand outline-none" placeholder="Emailingizni kiriting">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Parol</label>
+                    <input type="password" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand focus:border-brand outline-none" placeholder="••••••••">
+                </div>
+                <button type="submit" class="w-full bg-brand text-white font-bold py-3 rounded-lg hover:bg-darkBrand transition">Kirish</button>
+            </form>
+            <p class="mt-4 text-center text-sm text-gray-600">Hisobingiz yo'qmi? <button onclick="switchModals('loginModal', 'registerModal')" class="text-brand font-bold">Ro'yxatdan o'tish</button></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md transform scale-95 transition-transform duration-300 relative">
+            <button onclick="toggleModal('registerModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Ro'yxatdan O'tish</h3>
+            <form onsubmit="handleRegister(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Ism</label>
+                    <input type="text" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand focus:border-brand outline-none" placeholder="To'liq ismingiz">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand focus:border-brand outline-none" placeholder="Email manzilingiz">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Parol o'ylab toping</label>
+                    <input type="password" minlength="6" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand focus:border-brand outline-none" placeholder="Eng kamida 6 ta belgi">
+                </div>
+                <button type="submit" class="w-full bg-brand text-white font-bold py-3 rounded-lg hover:bg-darkBrand transition">Ro'yxatdan O'tish</button>
+            </form>
+            <p class="mt-4 text-center text-sm text-gray-600">Allaqachon hisobingiz bormi? <button onclick="switchModals('registerModal', 'loginModal')" class="text-brand font-bold">Tizimga kirish</button></p>
+        </div>
+    </div>
+
+    <script>
+        // Modalni ochish va yopish funksiyasi
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('div');
+            
+            if (modal.classList.contains('hidden')) {
+                // Ochish animatsiyasi
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                }, 10);
+            } else {
+                // Yopish animatsiyasi
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Modallarni biridan ikkinchisiga o'tkazish
+        function switchModals(hideId, showId) {
+            toggleModal(hideId);
+            setTimeout(() => {
+                toggleModal(showId);
+            }, 300);
+        }
+
+        // Loginni simulyatsiya qilish
+        function handleLogin(event) {
+            event.preventDefault(); // Sahifa yangilanishini to'xtatadi
+            alert("✅ Tizimga muvaffaqiyatli kirdingiz!");
+            toggleModal('loginModal');
+            event.target.reset(); // Formani tozalaydi
+        }
+
+        // Registratsiyani simulyatsiya qilish
+        function handleRegister(event) {
+            event.preventDefault();
+            alert("🎉 Muvaffaqiyatli ro'yxatdan o'tdingiz! Xush kelibsiz.");
+            toggleModal('registerModal');
+            event.target.reset();
+        }
+
+        // Aloqa formasini simulyatsiya qilish
+        function handleContact(event) {
+            event.preventDefault();
+            alert("✉️ Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
